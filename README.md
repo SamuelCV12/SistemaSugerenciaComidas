@@ -70,22 +70,27 @@ Desarrollar una aplicación por consola que integre estructuras de datos dinámi
 
 ## 🧪 Ejemplo de uso
 
+```text
 =============================================================
-  SISTEMA INTELIGENTE DE RECOMENDACIONES DE RECETAS
+        SISTEMA INTELIGENTE DE RECOMENDACIONES DE RECETAS
 =============================================================
 
+[ MENÚ PRINCIPAL ]
+-------------------------------------------------------------
 1. Ingresar ingredientes disponibles
 2. Ver recetas sugeridas
 3. Ver alternativas (sustituciones)
 4. Ver pasos de una receta
 0. Salir
 -------------------------------------------------------------
-Seleccione una opcion: 1
-============================================================
-  INGRESAR INGREDIENTES DISPONIBLES
-============================================================
+Seleccione una opción: 1
 
-Ingrese los ingredientes que tiene (uno por linea).
+
+=============================================================
+        INGRESAR INGREDIENTES DISPONIBLES
+=============================================================
+
+Ingrese los ingredientes que tiene (uno por línea).
 Escriba 'fin' cuando termine.
 
 Ingrediente 1: arroz
@@ -96,57 +101,63 @@ Ingrediente 5: fin
 
 [OK] Se han registrado 4 ingredientes.
 
-Seleccione una opcion: 2
-============================================================
-  RECETAS SUGERIDAS
-============================================================
+
+=============================================================
+        RECETAS SUGERIDAS
+=============================================================
 
 Ingredientes disponibles: arroz, pollo, ajo, aceite
 
-1. Arroz con pollo (80% coincidencia)
-   Faltan: cebolla
+ 1. Arroz con pollo ............... (80% coincidencia)
+      Faltan: cebolla
 
-2. Pollo al horno (75% coincidencia)
-   Faltan: limon
+ 2. Pollo al horno ................ (75% coincidencia)
+      Faltan: limón
 
-3. Pasta con tomate (40% coincidencia)
-   Faltan: pasta, tomate, albahaca
+ 3. Pasta con tomate .............. (40% coincidencia)
+      Faltan: pasta, tomate, albahaca
 
-4. Ensalada Cesar (25% coincidencia)
-   Faltan: lechuga, queso, pan
-   
-   Seleccione una opcion: 3
-============================================================
-  SUSTITUCIONES E INGREDIENTES ALTERNATIVOS
-============================================================
+ 4. Ensalada César ................ (25% coincidencia)
+      Faltan: lechuga, queso, pan
 
--> Arroz con pollo
-   Ingredientes faltantes: cebolla
-   Posibles sustitutos: cebollin
+Seleccione una opción: 3
 
--> Pollo al horno
-   Ingredientes faltantes: limon
-   Posibles sustitutos: vinagre
 
--> Pasta con tomate
-   Ingredientes faltantes: pasta, tomate, albahaca
-   Posibles sustitutos: arroz
-   
-   Seleccione una opcion: 4
-============================================================
-  SELECCIONAR RECETA
-============================================================
+=============================================================
+        SUSTITUCIONES E INGREDIENTES ALTERNATIVOS
+=============================================================
+
+→ Arroz con pollo
+     Ingredientes faltantes: cebolla
+     Posibles sustitutos: cebollín
+
+→ Pollo al horno
+     Ingredientes faltantes: limón
+     Posibles sustitutos: vinagre
+
+→ Pasta con tomate
+     Ingredientes faltantes: pasta, tomate, albahaca
+     Posibles sustitutos: arroz
+
+Seleccione una opción: 4
+
+
+=============================================================
+        SELECCIONAR RECETA
+=============================================================
 
 Recetas disponibles:
-1. Arroz con pollo
-2. Pollo al horno
-3. Pasta con tomate
-4. Ensalada Cesar
+ 1. Arroz con pollo
+ 2. Pollo al horno
+ 3. Pasta con tomate
+ 4. Ensalada César
 
-Seleccione el numero de la receta: 1
-============================================================
-  Arroz con pollo
-============================================================
+Seleccione el número de la receta: 1
+
+
+=============================================================
+        Arroz con pollo
+=============================================================
 
 INGREDIENTES NECESARIOS:
   [OK] arroz
@@ -155,18 +166,24 @@ INGREDIENTES NECESARIOS:
   [OK] ajo
   [OK] aceite
 
-PASOS DE PREPARACION:
-1. Cortar el pollo en trozos medianos
-2. Picar la cebolla y el ajo finamente
-3. Sofreir el pollo con cebolla y ajo
-4. Agregar el arroz y agua
-5. Cocinar hasta que el arroz este listo
+PASOS DE PREPARACIÓN:
+  1. Cortar el pollo en trozos medianos.
+  2. Picar la cebolla y el ajo finamente.
+  3. Sofreír el pollo con cebolla y ajo.
+  4. Agregar el arroz y agua.
+  5. Cocinar hasta que el arroz esté listo.
 
-[OK] Esta receta se ha preparado 1 veces.
+[OK] Esta receta se ha preparado 1 vez.
 
-Seleccione una opcion: 5 
 
-Gracias por Preferirnos. Hasta Pronto...
+=============================================================
+        SALIDA DEL SISTEMA
+=============================================================
+
+Seleccione una opción: 5
+
+Gracias por preferirnos. ¡Hasta pronto!
+```
 ---
 
 ## 🧱 Requisitos técnicos
@@ -180,7 +197,8 @@ Gracias por Preferirnos. Hasta Pronto...
 
 ## 👨‍💻 Autores:
 
-Samuel Correa Velasquez
-Yan Frank Ríos López
-Andrés Felipe Eusse Chavarria
+Samuel Correa Velasquez  
+Yan Frank Ríos López   
+Andrés Felipe Eusse Chavarria  
+
 
