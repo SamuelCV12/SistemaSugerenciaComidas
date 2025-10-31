@@ -197,9 +197,9 @@ Gracias por preferirnos. ¡Hasta pronto!
 
 ## 👨‍💻 Autores:
 
-Samuel Correa Velasquez  
-Yan Frank Ríos López   
-Andrés Felipe Eusse Chavarria  
-Julieth Jhosiris Daza Villada
+- Samuel Correa Velasquez  
+- Yan Frank Ríos López   
+- Andrés Felipe Eusse Chavarria  
+- Julieth Jhosiris Daza Villada
 
 
