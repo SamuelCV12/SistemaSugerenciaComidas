@@ -115,3 +115,5 @@ Receta sugerida: Arroz con pollo (100% coincidencia)
 ## 👨‍💻 Autores:
 
 Samuel Correa Velasquez
+Yan Frank Ríos López
+
