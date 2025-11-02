@@ -94,6 +94,63 @@ private:
         r5.agregarPaso("3. Mezclar pasta con salsa");
         r5.agregarPaso("4. Decorar con albahaca fresca");
         recetas.insertar(r5);
+
+        // Receta 6: Arepas con queso
+        Receta r6("Arepas con queso", "desayuno");
+        r6.agregarIngrediente("harina de maiz");
+        r6.agregarIngrediente("queso");
+        r6.agregarIngrediente("mantequilla");
+        r6.agregarIngrediente("sal");
+        r6.agregarPaso("1. Mezclar la harina con agua, sal y mantequilla derretida");
+        r6.agregarPaso("2. Formar las arepas y cocinarlas en una plancha caliente");
+        r6.agregarPaso("3. Abrir por la mitad y rellenar con queso");
+        recetas.insertar(r6);
+
+        // Receta 7: Batido de frutas
+        Receta r7("Batido de frutas", "bebida");
+        r7.agregarIngrediente("leche");
+        r7.agregarIngrediente("banana");
+        r7.agregarIngrediente("fresa");
+        r7.agregarIngrediente("azucar");
+        r7.agregarPaso("1. Pelar las frutas y cortarlas en trozos");
+        r7.agregarPaso("2. Colocar en la licuadora junto con la leche y el azucar");
+        r7.agregarPaso("3. Licuar hasta obtener una mezcla homogenea");
+        recetas.insertar(r7);
+
+        // Receta 8: Omelette de verduras
+        Receta r8("Omelette de verduras", "desayuno");
+        r8.agregarIngrediente("huevo");
+        r8.agregarIngrediente("cebolla");
+        r8.agregarIngrediente("pimenton");
+        r8.agregarIngrediente("tomate");
+        r8.agregarPaso("1. Batir los huevos con sal al gusto");
+        r8.agregarPaso("2. Sofreir las verduras picadas en una sarten");
+        r8.agregarPaso("3. Agregar los huevos y cocinar hasta que cuaje");
+        recetas.insertar(r8);
+
+        // Receta 9: Lentejas guisadas
+        Receta r9("Lentejas guisadas", "plato principal");
+        r9.agregarIngrediente("lentejas");
+        r9.agregarIngrediente("zanahoria");
+        r9.agregarIngrediente("cebolla");
+        r9.agregarIngrediente("ajo");
+        r9.agregarIngrediente("tomate");
+        r9.agregarPaso("1. Remojar las lentejas por una hora");
+        r9.agregarPaso("2. Sofreir ajo, cebolla y tomate");
+        r9.agregarPaso("3. Agregar las lentejas y cocinar hasta que esten blandas");
+        recetas.insertar(r9);
+
+        // Receta 10: Tostadas francesas
+        Receta r10("Tostadas francesas", "desayuno");
+        r10.agregarIngrediente("pan");
+        r10.agregarIngrediente("huevo");
+        r10.agregarIngrediente("leche");
+        r10.agregarIngrediente("azucar");
+        r10.agregarPaso("1. Batir el huevo con la leche y el azucar");
+        r10.agregarPaso("2. Remojar las rebanadas de pan en la mezcla");
+        r10.agregarPaso("3. Dorar en una sarten con mantequilla");
+        recetas.insertar(r10);
+
         
         // Configurar relaciones entre ingredientes (sustituciones)
         relacionesIngredientes.agregarRelacion("limon", "vinagre");
@@ -105,6 +162,16 @@ private:
         relacionesIngredientes.agregarRelacion("leche", "crema");
         relacionesIngredientes.agregarRelacion("mantequilla", "aceite");
         relacionesIngredientes.agregarRelacion("zanahoria", "calabaza");
+        relacionesIngredientes.agregarRelacion("harina de maiz", "harina de trigo");
+        relacionesIngredientes.agregarRelacion("queso", "queso rallado");
+        relacionesIngredientes.agregarRelacion("fresa", "mora");
+        relacionesIngredientes.agregarRelacion("banana", "mango");
+        relacionesIngredientes.agregarRelacion("huevo", "claras de huevo");
+        relacionesIngredientes.agregarRelacion("pimenton", "aji");
+        relacionesIngredientes.agregarRelacion("lentejas", "frijoles");
+        relacionesIngredientes.agregarRelacion("azucar", "miel");
+        relacionesIngredientes.agregarRelacion("mantequilla", "margarina");
+        relacionesIngredientes.agregarRelacion("leche", "bebida vegetal");
     }
 
 public:
@@ -391,4 +458,5 @@ public:
             
         } while (opcion != 0);
     }
+
 };
