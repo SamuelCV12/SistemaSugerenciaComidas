@@ -1,3 +1,15 @@
+#include <iostream>
+#include <string>
+#include <vector>
+#include <map>
+#include <set>
+#include <algorithm>
+#include <iomanip>
+#include <sstream>
+#include <limits>
+
+using namespace std;
+
 class Receta {
 private:
     string nombre;
@@ -55,3 +67,4 @@ public:
         return faltantes;
     }
 };
+
