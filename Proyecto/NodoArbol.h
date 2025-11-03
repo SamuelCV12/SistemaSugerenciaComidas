@@ -7,7 +7,7 @@
 #include <iomanip>
 #include <sstream>
 #include <limits>
-
+#include "Receta.h"
 using namespace std;
 
 class NodoArbol {
@@ -27,4 +27,5 @@ public:
     void setIzquierdo(NodoArbol* izq) { izquierdo = izq; }
     void setDerecho(NodoArbol* der) { derecho = der; }
 };
+
 
