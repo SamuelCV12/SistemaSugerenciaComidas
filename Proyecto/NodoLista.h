@@ -1,3 +1,4 @@
+#pragma once
 #include <iostream>
 #include <string>
 #include <vector>
@@ -8,6 +9,7 @@
 #include <sstream>
 #include <limits>
 #include "Ingrediente.h"
+
 using namespace std;
 
 class NodoLista {
@@ -22,5 +24,6 @@ public:
     NodoLista* getSiguiente() const { return siguiente; }
     void setSiguiente(NodoLista* sig) { siguiente = sig; }
 };
+
 
 
