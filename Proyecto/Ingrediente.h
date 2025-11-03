@@ -1,3 +1,4 @@
+#pragma once
 #include <iostream>
 #include <string>
 #include <vector>
@@ -33,4 +34,5 @@ public:
         return nombre < otro.nombre;
     }
 };
+
 
