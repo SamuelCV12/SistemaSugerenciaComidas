@@ -7,7 +7,7 @@
 #include <iomanip>
 #include <sstream>
 #include <limits>
-
+#include "ListaEnlazada.h"
 using namespace std;
 
 class Receta {
@@ -67,4 +67,5 @@ public:
         return faltantes;
     }
 };
+
 
