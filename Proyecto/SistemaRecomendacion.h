@@ -7,7 +7,10 @@
 #include <iomanip>
 #include <sstream>
 #include <limits>
-
+#include "ListaEnlazada.h"
+#include "ArbolBST.h"
+#include "Grafo.h"
+#include "Receta.h"
 using namespace std;
 
 class SistemaRecomendacion {
@@ -430,4 +433,5 @@ public:
     }
     
 };
+
 
