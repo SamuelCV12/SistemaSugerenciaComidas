@@ -1,3 +1,15 @@
+#include <iostream>
+#include <string>
+#include <vector>
+#include <map>
+#include <set>
+#include <algorithm>
+#include <iomanip>
+#include <sstream>
+#include <limits>
+
+using namespace std;
+
 class NodoArbol {
 private:
     Receta receta;
@@ -15,3 +27,4 @@ public:
     void setIzquierdo(NodoArbol* izq) { izquierdo = izq; }
     void setDerecho(NodoArbol* der) { derecho = der; }
 };
+
