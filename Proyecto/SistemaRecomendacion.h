@@ -194,7 +194,7 @@ private:
         // Configurar relaciones entre ingredientes (sustituciones)
         relacionesIngredientes.agregarRelacion("limon", "vinagre");
         relacionesIngredientes.agregarRelacion("pollo", "pavo");
-        relacionesIngredientes.agregarRelacion("pollo", "carne");
+      	relacionesIngredientes.agregarRelacion("pollo", "carne");
         relacionesIngredientes.agregarRelacion("papa", "yuca");
         relacionesIngredientes.agregarRelacion("arroz", "pasta");
         relacionesIngredientes.agregarRelacion("cebolla", "cebollin");
@@ -217,7 +217,7 @@ private:
         relacionesIngredientes.agregarRelacion("arequipe", "dulce de leche");
         relacionesIngredientes.agregarRelacion("frijoles rojos", "lentejas");
         relacionesIngredientes.agregarRelacion("aguacate", "mantequilla");
-    s     relacionesIngredientes.agregarRelacion("arepa", "pan");
+        relacionesIngredientes.agregarRelacion("arepa", "pan");
         relacionesIngredientes.agregarRelacion("bicarbonato", "polvo de hornear");
         relacionesIngredientes.agregarRelacion("queso", "queso rallado");
         relacionesIngredientes.agregarRelacion("maiz", "harina de maiz");
@@ -262,7 +262,7 @@ public:
                     }
                     Ingrediente ing(ingrediente);
                     ingredientesDisponibles.agregar(ing);
-                s   contador++;
+                    contador++;
                 } catch (const invalid_argument& e) {
                     cout << "[ERROR] " << e.what() << endl;
                 }
@@ -291,7 +291,7 @@ public:
             if (i < misIngredientes.size() - 1) cout << ", ";
         }
         cout << "\n" << endl;
-    s     
+        
         auto resultados = recetas.buscarRecetas(ingredientesDisponibles);
         
         if (resultados.empty()) {
@@ -300,7 +300,7 @@ public:
         }
         
         int num = 1;
-        for (const auto& par : resultados) {
+      	for (const auto& par : resultados) {
             Receta* receta = par.first;
             double coincidencia = par.second;
             
@@ -328,19 +328,19 @@ public:
         }
         
         mostrarLinea();
-        cout << "  SUSTITUCIONES E INGREDIENTES ALTERNATIVOS" << endl;
+      	cout << "  SUSTITUCIONES E INGREDIENTES ALTERNATIVOS" << endl;
         mostrarLinea();
         
         auto resultados = recetas.buscarRecetas(ingredientesDisponibles);
         
         if (resultados.empty()) {
-          ,   cout << "\nNo hay recetas para analizar alternativas.\n" << endl;
+            cout << "\nNo hay recetas para analizar alternativas.\n" << endl;
             return;
         }
         
         bool hayAlternativas = false;
         
-        for (const auto& par : resultados) {
+      	for (const auto& par : resultados) {
             Receta* receta = par.first;
             double coincidencia = par.second;
             
@@ -355,85 +355,85 @@ public:
                     }
                     
                     cout << "-> " << receta->getNombre() << endl;
-                    cout << "   Ingredientes faltantes: ";
+                  	cout << "   Ingredientes faltantes: ";
                     for (size_t i = 0; i < faltantes.size(); i++) {
                         cout << faltantes[i];
                         if (i < faltantes.size() - 1) cout << ", ";
                     }
-                    cout << endl;
+                  	cout << endl;
                     
-                    cout << "   Posibles sustitutos: ";
-                    for (size_t i = 0; i < alternativas.size(); i++) {
+                  	cout << "   Posibles sustitutos: ";
+                  	for (size_t i = 0; i < alternativas.size(); i++) {
                         cout << alternativas[i];
-                        if (i < alternativas.size() - 1) cout << ", ";
-section                 }
-                    cout << "\n" << endl;
+    	                  if (i < alternativas.size() - 1) cout << ", ";
+                  	}
+                  	cout << "\n" << endl;
                 }
             }
         }
         
-        if (!hayAlternativas) {
+      	if (!hayAlternativas) {
             cout << "\n[OK] No se necesitan sustituciones. Tienes recetas con 100% de coincidencia.\n" << endl;
-        }
+      	}
     }
     
-    void verPasosReceta() {
-        if (ingredientesDisponibles.estaVacia()) {
+  	void verPasosReceta() {
+      	if (ingredientesDisponibles.estaVacia()) {
             cout << "\n[ERROR] Primero debe ingresar sus ingredientes disponibles.\n" << endl;
             return;
-        }
+      	}
         
-        auto resultados = recetas.buscarRecetas(ingredientesDisponibles);
-section         
-        if (resultados.empty()) {
-            cout << "\nNo hay recetas disponibles.\n" << endl;
-            return;
-        }
+      	auto resultados = recetas.buscarRecetas(ingredientesDisponibles);
         
-        mostrarLinea();
-        cout << "  SELECCIONAR RECETA" << endl;
-section         mostrarLinea();
+      	if (resultados.empty()) {
+          	cout << "\nNo hay recetas disponibles.\n" << endl;
+          	return;
+      	}
         
-        cout << "\nRecetas disponibles:\n" << endl;
-        for (size_t i = 0; i < resultados.size(); i++) {
-            cout << (i + 1) << ". " << resultados[i].first->getNombre() << endl;
-        }
+      	mostrarLinea();
+      	cout << "  SELECCIONAR RECETA" << endl;
+      	mostrarLinea();
         
-        cout << "\nSeleccione el numero de la receta: ";
-        int opcion;
-        if (!(cin >> opcion)) {
-            cin.clear();
-            cin.ignore(numeric_limits<streamsize>::max(), '\n');
-section             cout << "\n[ERROR] Entrada invalida. Debe ingresar un numero.\n" << endl;
-            return;
-        }
+      	cout << "\nRecetas disponibles:\n" << endl;
+      	for (size_t i = 0; i < resultados.size(); i++) {
+          	cout << (i + 1) << ". " << resultados[i].first->getNombre() << endl;
+      	}
         
-        if (opcion < 1 || opcion > (int)resultados.size()) {
-section             cout << "\n[ERROR] Opcion invalida.\n" << endl;
-            return;
-        }
+      	cout << "\nSeleccione el numero de la receta: ";
+      	int opcion;
+      	if (!(cin >> opcion)) {
+          	cin.clear();
+  t       	cin.ignore(numeric_limits<streamsize>::max(), '\n');
+          	cout << "\n[ERROR] Entrada invalida. Debe ingresar un numero.\n" << endl;
+          	return;
+      	}
         
-        Receta* receta = resultados[opcion - 1].first;
-        receta->incrementarUso();
+      	if (opcion < 1 || opcion > (int)resultados.size()) {
+          	cout << "\n[ERROR] Opcion invalida.\n" << endl;
+          	return;
+      	}
         
-        mostrarLinea();
-        cout << "  " << receta->getNombre() << endl;
-        mostrarLinea();
+      	Receta* receta = resultados[opcion - 1].first;
+      	receta->incrementarUso();
         
-        cout << "\nINGREDIENTES NECESARIOS:" << endl;
-s       auto ings = receta->getIngredientes();
-        for (const auto& ing : ings) {
-            bool disponible = ingredientesDisponibles.contiene(ing);
-            cout << "  " << (disponible ? "[OK]" : "[X]") << " " << ing << endl;
-        }
+      	mostrarLinea();
+      	cout << "  " << receta->getNombre() << endl;
+      	mostrarLinea();
         
-        cout << "\nPASOS DE PREPARACION:" << endl;
-        auto pasos = receta->getPasos();
-        for (const auto& paso : pasos) {
-            cout << paso << endl;
-        }
+      	cout << "\nINGREDIENTES NECESARIOS:" << endl;
+      	auto ings = receta->getIngredientes();
+      	for (const auto& ing : ings) {
+          	bool disponible = ingredientesDisponibles.contiene(ing);
+          	cout << "  " << (disponible ? "[OK]" : "[X]") << " " << ing << endl;
+      	}
         
-        cout << "\n[OK] Esta receta se ha preparado " << receta->getVecesUsada() 
+      	cout << "\nPASOS DE PREPARACION:" << endl;
+      	auto pasos = receta->getPasos();
+      	for (const auto& paso : pasos) {
+          	cout << paso << endl;
+  	    }
+        
+      	cout << "\n[OK] Esta receta se ha preparado " << receta->getVecesUsada() 
             << " veces.\n" << endl;
     }
     
