@@ -1,3 +1,15 @@
+#include <iostream>
+#include <string>
+#include <vector>
+#include <map>
+#include <set>
+#include <algorithm>
+#include <iomanip>
+#include <sstream>
+#include <limits>
+
+using namespace std;
+
 class ListaEnlazada {
 private:
     NodoLista* cabeza;
@@ -69,3 +81,4 @@ public:
         tamano = 0;
     }
 };
+
