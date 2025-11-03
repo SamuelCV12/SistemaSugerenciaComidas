@@ -1,3 +1,15 @@
+#include <iostream>
+#include <string>
+#include <vector>
+#include <map>
+#include <set>
+#include <algorithm>
+#include <iomanip>
+#include <sstream>
+#include <limits>
+
+using namespace std;
+
 class SistemaRecomendacion {
 private:
     ListaEnlazada ingredientesDisponibles;
@@ -418,3 +430,4 @@ public:
     }
     
 };
+
