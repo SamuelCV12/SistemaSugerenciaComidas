@@ -53,7 +53,7 @@ private:
 
 public:
     ArbolBST() : raiz(nullptr) {}
-  _
+    
     ~ArbolBST() {
         destruirArbol(raiz);
     }
