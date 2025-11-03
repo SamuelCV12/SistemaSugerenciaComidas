@@ -1,3 +1,15 @@
+#include <iostream>
+#include <string>
+#include <vector>
+#include <map>
+#include <set>
+#include <algorithm>
+#include <iomanip>
+#include <sstream>
+#include <limits>
+
+using namespace std;
+
 class NodoLista {
 private:
     Ingrediente dato;
@@ -10,3 +22,4 @@ public:
     NodoLista* getSiguiente() const { return siguiente; }
     void setSiguiente(NodoLista* sig) { siguiente = sig; }
 };
+
