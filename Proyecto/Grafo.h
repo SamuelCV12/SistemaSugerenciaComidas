@@ -1,3 +1,15 @@
+#include <iostream>
+#include <string>
+#include <vector>
+#include <map>
+#include <set>
+#include <algorithm>
+#include <iomanip>
+#include <sstream>
+#include <limits>
+
+using namespace std;
+
 class Grafo {
 private:
     map<string, set<string>> adyacencias; // Relaciones entre ingredientes
@@ -39,3 +51,4 @@ public:
         return vector<string>(alternativas.begin(), alternativas.end());
     }
 };
+
