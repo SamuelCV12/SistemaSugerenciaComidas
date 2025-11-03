@@ -1,3 +1,4 @@
+#pragma once
 #include <iostream>
 #include <string>
 #include <vector>
@@ -27,5 +28,6 @@ public:
     void setIzquierdo(NodoArbol* izq) { izquierdo = izq; }
     void setDerecho(NodoArbol* der) { derecho = der; }
 };
+
 
 
