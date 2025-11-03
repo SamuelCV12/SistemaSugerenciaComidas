@@ -7,7 +7,7 @@
 #include <iomanip>
 #include <sstream>
 #include <limits>
-
+#include "NodoLista.h"
 using namespace std;
 
 class ListaEnlazada {
@@ -81,4 +81,5 @@ public:
         tamano = 0;
     }
 };
+
 
