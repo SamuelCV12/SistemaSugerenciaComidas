@@ -1,3 +1,15 @@
+#include <iostream>
+#include <string>
+#include <vector>
+#include <map>
+#include <set>
+#include <algorithm>
+#include <iomanip>
+#include <sstream>
+#include <limits>
+
+using namespace std;
+
 int main() {
     SistemaRecomendacion sistema;
     int opcion = 0;
@@ -50,3 +62,4 @@ int main() {
         }
     }
 }
+
