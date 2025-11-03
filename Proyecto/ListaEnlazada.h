@@ -1,3 +1,4 @@
+#pragma once
 #include <iostream>
 #include <string>
 #include <vector>
@@ -81,5 +82,6 @@ public:
         tamano = 0;
     }
 };
+
 
 
