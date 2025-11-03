@@ -1,3 +1,4 @@
+#pragma once
 #include <iostream>
 #include <string>
 #include <vector>
@@ -51,4 +52,5 @@ public:
         return vector<string>(alternativas.begin(), alternativas.end());
     }
 };
+
 
