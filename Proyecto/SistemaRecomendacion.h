@@ -26,30 +26,54 @@ private:
     }
     
     void cargarRecetasPredeterminadas() {
-        // Receta 1: Arroz con pollo
+       // Receta 1: Arroz con pollo (detallado)
         Receta r1("Arroz con pollo", "plato principal");
         r1.agregarIngrediente("arroz");
         r1.agregarIngrediente("pollo");
         r1.agregarIngrediente("cebolla");
         r1.agregarIngrediente("ajo");
         r1.agregarIngrediente("aceite");
-        r1.agregarPaso("1. Cortar el pollo en trozos medianos");
-        r1.agregarPaso("2. Picar la cebolla y el ajo finamente");
-        r1.agregarPaso("3. Sofreir el pollo con cebolla y ajo");
-        r1.agregarPaso("4. Agregar el arroz y agua");
-        r1.agregarPaso("5. Cocinar hasta que el arroz este listo");
+        r1.agregarIngrediente("pimiento");       
+        r1.agregarIngrediente("zanahoria");       
+        r1.agregarIngrediente("guisantes");       
+        r1.agregarIngrediente("sal");
+        r1.agregarIngrediente("pimienta");
+        // Pasos de Preparacion
+        r1.agregarPaso("1. Lavar y cortar el pollo en trozos medianos.");
+        r1.agregarPaso("2. Sazonar el pollo con sal y pimienta al gusto y dejar reposar 10 minutos.");
+        r1.agregarPaso("3. Picar finamente la cebolla, el ajo, el pimiento y la zanahoria.");
+        r1.agregarPaso("4. Calentar aceite en una sartén grande o cazuela y sofreír la cebolla y el ajo hasta que estén transparentes.");
+        r1.agregarPaso("5. Agregar el pollo y dorarlo por todos lados, asegurándose de sellar los jugos.");
+        r1.agregarPaso("6. Añadir el pimiento y la zanahoria, y cocinar 3-4 minutos más hasta que estén ligeramente tiernos.");
+        r1.agregarPaso("7. Incorporar el arroz crudo y mezclar bien con el sofrito y el pollo, dejando que los granos se impregnen del aceite.");
+        r1.agregarPaso("8. Verter agua o caldo de pollo caliente hasta cubrir el arroz (aproximadamente el doble del volumen de arroz).");
+        r1.agregarPaso("9. Llevar a ebullición, luego reducir el fuego a bajo, tapar y cocinar 15-20 minutos o hasta que el arroz esté tierno y el líquido se haya absorbido.");
+        r1.agregarPaso("10. Si se desea, agregar guisantes y mezclar suavemente, dejando que se cocinen 2-3 minutos más.");
+        r1.agregarPaso("11. Probar de sal y pimienta, ajustar si es necesario.");
+        r1.agregarPaso("12. Apagar el fuego y dejar reposar 5 minutos antes de servir para que los sabores se integren.");
         recetas.insertar(r1);
         
-        // Receta 2: Pollo al horno
+        // Receta 2: Pollo al horno (detallado)
         Receta r2("Pollo al horno", "plato principal");
         r2.agregarIngrediente("pollo");
         r2.agregarIngrediente("limon");
         r2.agregarIngrediente("ajo");
         r2.agregarIngrediente("aceite");
-        r2.agregarPaso("1. Marinar el pollo con limon y ajo");
-        r2.agregarPaso("2. Dejar reposar 30 minutos");
-        r2.agregarPaso("3. Hornear a 180C por 45 minutos");
-        r2.agregarPaso("4. Servir caliente");
+        r2.agregarIngrediente("sal");
+        r2.agregarIngrediente("pimienta");
+        r2.agregarIngrediente("romero");     // opcional
+        r2.agregarIngrediente("paprika");    // opcional
+        // Pasos de Preparacion
+        r2.agregarPaso("1. Precalentar el horno a 180°C (350°F).");
+        r2.agregarPaso("2. Lavar y secar el pollo con papel absorbente.");
+        r2.agregarPaso("3. Exprimir el limón y mezclar el jugo con ajo picado, aceite, sal, pimienta y paprika.");
+        r2.agregarPaso("4. Untar el pollo con la mezcla, asegurándose de cubrir toda la superficie y el interior si es pollo entero.");
+        r2.agregarPaso("5. Colocar el pollo en una bandeja para hornear y dejar marinar mínimo 30 minutos (puede refrigerarse por más tiempo para más sabor).");
+        r2.agregarPaso("6. Insertar ramitas de romero en la bandeja o dentro del pollo para aroma (opcional).");
+        r2.agregarPaso("7. Hornear el pollo en horno precalentado durante 45-60 minutos, dependiendo del tamaño, rociando con los jugos cada 15-20 minutos.");
+        r2.agregarPaso("8. Verificar cocción: el pollo debe alcanzar una temperatura interna de 75°C (165°F) y los jugos deben ser claros.");
+        r2.agregarPaso("9. Retirar del horno, dejar reposar 5-10 minutos antes de cortar para que los jugos se distribuyan.");
+        r2.agregarPaso("10. Servir caliente acompañado de guarnición de tu preferencia.");
         recetas.insertar(r2);
         
         // Receta 3: Sopa de verduras
@@ -58,153 +82,317 @@ private:
         r3.agregarIngrediente("zanahoria");
         r3.agregarIngrediente("cebolla");
         r3.agregarIngrediente("apio");
-        r3.agregarPaso("1. Pelar y cortar todas las verduras");
-        r3.agregarPaso("2. Hervir agua en una olla grande");
-        r3.agregarPaso("3. Agregar las verduras y cocinar 20 minutos");
-        r3.agregarPaso("4. Sazonar al gusto");
+        r3.agregarIngrediente("calabacín");      
+        r3.agregarIngrediente("pimiento");       
+        r3.agregarIngrediente("tomate");         
+        r3.agregarIngrediente("aceite");
+        r3.agregarIngrediente("sal");
+        r3.agregarIngrediente("pimienta");
+        r3.agregarIngrediente("ajo");           
+        r3.agregarIngrediente("perejil");       
+
+         // Pasos de preparación
+        r3.agregarPaso("1. Lavar, pelar y cortar todas las verduras en trozos medianos.");
+        r3.agregarPaso("2. Calentar un poco de aceite en una olla grande.");
+        r3.agregarPaso("3. Sofreír la cebolla y el ajo picados hasta que estén dorados.");
+        r3.agregarPaso("4. Agregar las demás verduras (papa, zanahoria, apio, calabacín, pimiento y tomate) y saltear por unos minutos.");
+        r3.agregarPaso("5. Añadir suficiente agua para cubrir las verduras y llevar a ebullición.");
+        r3.agregarPaso("6. Reducir el fuego y cocinar a fuego lento por 20-25 minutos o hasta que las verduras estén tiernas.");
+        r3.agregarPaso("7. Sazonar con sal y pimienta al gusto.");
+        r3.agregarPaso("8. Servir caliente y decorar con perejil fresco picado.");
+
         recetas.insertar(r3);
         
-        // Receta 4: Ensalada Cesar
-        Receta r4("Ensalada Cesar", "ensalada");
+        Receta r4("Ensalada César", "ensalada");
+
+        // Ingredientes
         r4.agregarIngrediente("lechuga");
         r4.agregarIngrediente("pollo");
-        r4.agregarIngrediente("queso");
-        r4.agregarIngrediente("pan");
-        r4.agregarPaso("1. Lavar y cortar la lechuga");
-        r4.agregarPaso("2. Cocinar y cortar el pollo");
-        r4.agregarPaso("3. Preparar crutones con el pan");
-        r4.agregarPaso("4. Mezclar todo con aderezo Cesar");
+        r4.agregarIngrediente("queso parmesano");   
+        r4.agregarIngrediente("pan");               
+        r4.agregarIngrediente("aceite de oliva");
+        r4.agregarIngrediente("ajo");               
+        r4.agregarIngrediente("sal");
+        r4.agregarIngrediente("pimienta");
+        r4.agregarIngrediente("aderezo César");    
+        r4.agregarIngrediente("limón");            
+        
+        // Pasos de preparación
+        r4.agregarPaso("1. Lavar y escurrir bien la lechuga, luego cortarla en trozos medianos.");
+        r4.agregarPaso("2. Cocinar el pollo en una sartén con un poco de aceite, sal y pimienta, luego cortarlo en tiras.");
+        r4.agregarPaso("3. Cortar el pan en cubos pequeños y dorarlos en una sartén con aceite y ajo hasta formar crutones crujientes.");
+        r4.agregarPaso("4. Rallar el queso parmesano al gusto.");
+        r4.agregarPaso("5. En un bol grande, mezclar la lechuga con el pollo, los crutones y el queso.");
+        r4.agregarPaso("6. Agregar el aderezo César al gusto y mezclar suavemente para no romper la lechuga.");
+        r4.agregarPaso("7. Opcional: añadir unas gotas de limón fresco para dar más sabor.");
+        r4.agregarPaso("8. Servir inmediatamente para mantener la frescura y el crujiente de los crutones.");
+        
         recetas.insertar(r4);
         
         // Receta 5: Pasta con tomate
         Receta r5("Pasta con tomate", "plato principal");
+
+         // Ingredientes
         r5.agregarIngrediente("pasta");
         r5.agregarIngrediente("tomate");
         r5.agregarIngrediente("ajo");
-        r5.agregarIngrediente("aceite");
-        r5.agregarIngrediente("albahaca");
-        r5.agregarPaso("1. Cocinar la pasta en agua hirviendo");
-        r5.agregarPaso("2. Preparar salsa con tomate y ajo");
-        r5.agregarPaso("3. Mezclar pasta con salsa");
-        r5.agregarPaso("4. Decorar con albahaca fresca");
+        r5.agregarIngrediente("aceite de oliva");
+        r5.agregarIngrediente("albahaca fresca");
+        r5.agregarIngrediente("sal");
+        r5.agregarIngrediente("pimienta");
+        r5.agregarIngrediente("queso parmesano rallado"); // opcional para servir
+        r5.agregarIngrediente("agua");                   // para hervir la pasta
+
+        // Pasos de preparación
+        r5.agregarPaso("1. Llenar una olla con agua, agregar sal y llevar a ebullición.");
+        r5.agregarPaso("2. Cocinar la pasta en agua hirviendo hasta que esté al dente, luego escurrir y reservar.");
+        r5.agregarPaso("3. Lavar y picar los tomates en cubos pequeños.");
+        r5.agregarPaso("4. Picar finamente el ajo.");
+        r5.agregarPaso("5. En una sartén grande, calentar aceite de oliva y sofreír el ajo hasta que esté dorado.");
+        r5.agregarPaso("6. Agregar los tomates y cocinar a fuego medio hasta que se forme una salsa espesa.");
+        r5.agregarPaso("7. Sazonar la salsa con sal y pimienta al gusto.");
+        r5.agregarPaso("8. Mezclar la pasta con la salsa, asegurándose de que se impregne bien.");
+        r5.agregarPaso("9. Servir la pasta en platos individuales, decorar con albahaca fresca y, si se desea, espolvorear queso parmesano rallado.");
+        r5.agregarPaso("10. Servir caliente y disfrutar.");
         recetas.insertar(r5);
 
         // Receta 6: Arepas con queso
         Receta r6("Arepas con queso", "desayuno");
-        r6.agregarIngrediente("harina de maiz");
+
+        // Ingredientes
+        r6.agregarIngrediente("harina de maíz");
         r6.agregarIngrediente("queso");
         r6.agregarIngrediente("mantequilla");
         r6.agregarIngrediente("sal");
-        r6.agregarPaso("1. Mezclar la harina con agua, sal y mantequilla derretida");
-        r6.agregarPaso("2. Formar las arepas y cocinarlas en una plancha caliente");
-        r6.agregarPaso("3. Abrir por la mitad y rellenar con queso");
+        r6.agregarIngrediente("agua");          
+        r6.agregarIngrediente("aceite");        
+        r6.agregarIngrediente("mantequilla extra"); 
+
+        // Pasos de preparación
+        r6.agregarPaso("1. En un bol grande, mezclar la harina de maíz con una pizca de sal.");
+        r6.agregarPaso("2. Agregar agua poco a poco y amasar hasta obtener una masa suave y homogénea.");
+        r6.agregarPaso("3. Incorporar mantequilla derretida a la masa y mezclar bien.");
+        r6.agregarPaso("4. Dividir la masa en porciones y formar bolas, luego aplastarlas ligeramente para dar forma de arepas.");
+        r6.agregarPaso("5. Calentar una plancha o sartén antiadherente y, si se desea, untar un poco de aceite.");
+        r6.agregarPaso("6. Cocinar las arepas a fuego medio, unos 5-7 minutos por cada lado, hasta que estén doradas y cocidas por dentro.");
+        r6.agregarPaso("7. Abrir las arepas por la mitad y rellenar con queso al gusto.");
+        r6.agregarPaso("8. Servir calientes, opcionalmente untadas con mantequilla extra.");
         recetas.insertar(r6);
 
-        // Receta 7: Batido de frutas
+       // Receta 7: Batido de frutas
         Receta r7("Batido de frutas", "bebida");
+
+        // Ingredientes
         r7.agregarIngrediente("leche");
         r7.agregarIngrediente("banana");
         r7.agregarIngrediente("fresa");
-        r7.agregarIngrediente("azucar");
-        r7.agregarPaso("1. Pelar las frutas y cortarlas en trozos");
-        r7.agregarPaso("2. Colocar en la licuadora junto con la leche y el azucar");
-        r7.agregarPaso("3. Licuar hasta obtener una mezcla homogenea");
+        r7.agregarIngrediente("azúcar");
+        r7.agregarIngrediente("miel");          
+        r7.agregarIngrediente("hielo");        
+        r7.agregarIngrediente("yogur");         
+
+        // Pasos de preparación
+        r7.agregarPaso("1. Lavar bien las fresas y retirar los tallos.");
+        r7.agregarPaso("2. Pelar la banana y cortarla en rodajas.");
+        r7.agregarPaso("3. Colocar las frutas cortadas en la licuadora.");
+        r7.agregarPaso("4. Agregar la leche y, si se desea, el yogur para mayor cremosidad.");
+        r7.agregarPaso("5. Añadir azúcar o miel al gusto y algunos cubos de hielo si se quiere un batido frío.");
+        r7.agregarPaso("6. Licuar todo hasta obtener una mezcla homogénea y cremosa.");
+        r7.agregarPaso("7. Servir inmediatamente en vasos altos, decorando con una fresa o rodaja de banana en el borde.");
+
         recetas.insertar(r7);
 
-        // Receta 8: Omelette de verduras
+       // Receta 8: Omelette de verduras
         Receta r8("Omelette de verduras", "desayuno");
+
+        // Ingredientes
         r8.agregarIngrediente("huevo");
         r8.agregarIngrediente("cebolla");
-        r8.agregarIngrediente("pimenton");
+        r8.agregarIngrediente("pimentón");
         r8.agregarIngrediente("tomate");
-        r8.agregarPaso("1. Batir los huevos con sal al gusto");
-        r8.agregarPaso("2. Sofreir las verduras picadas en una sarten");
-        r8.agregarPaso("3. Agregar los huevos y cocinar hasta que cuaje");
+        r8.agregarIngrediente("aceite");         
+        r8.agregarIngrediente("sal");
+        r8.agregarIngrediente("pimienta");       
+        r8.agregarIngrediente("queso");          
+        r8.agregarIngrediente("hierbas finas");  
+
+        // Pasos de preparación
+        r8.agregarPaso("1. Lavar y picar la cebolla, el pimentón y el tomate en cubos pequeños.");
+        r8.agregarPaso("2. Batir los huevos en un bol con sal, pimienta y hierbas al gusto.");
+        r8.agregarPaso("3. Calentar una sartén con un poco de aceite a fuego medio.");
+        r8.agregarPaso("4. Sofreír la cebolla, el pimentón y el tomate hasta que estén tiernos.");
+        r8.agregarPaso("5. Verter los huevos batidos sobre las verduras y distribuir uniformemente.");
+        r8.agregarPaso("6. Cocinar a fuego medio-bajo hasta que el omelette esté firme pero jugoso.");
+        r8.agregarPaso("7. Si se desea, añadir queso rallado encima y doblar el omelette por la mitad.");
+        r8.agregarPaso("8. Servir caliente, acompañado de pan o ensalada si se desea.");
         recetas.insertar(r8);
 
         // Receta 9: Lentejas guisadas
         Receta r9("Lentejas guisadas", "plato principal");
+
+        // Ingredientes
         r9.agregarIngrediente("lentejas");
         r9.agregarIngrediente("zanahoria");
         r9.agregarIngrediente("cebolla");
         r9.agregarIngrediente("ajo");
         r9.agregarIngrediente("tomate");
-        r9.agregarPaso("1. Remojar las lentejas por una hora");
-        r9.agregarPaso("2. Sofreir ajo, cebolla y tomate");
-        r9.agregarPaso("3. Agregar las lentejas y cocinar hasta que esten blandas");
+        r9.agregarIngrediente("aceite");          
+        r9.agregarIngrediente("papa");            
+        r9.agregarIngrediente("sal");
+        r9.agregarIngrediente("pimienta");
+        r9.agregarIngrediente("caldo de verduras"); 
+        r9.agregarIngrediente("laurel");          
+
+        // Pasos de preparación
+        r9.agregarPaso("1. Remojar las lentejas en agua durante al menos 1 hora.");
+        r9.agregarPaso("2. Pelar y picar la zanahoria, la cebolla, el ajo, la papa y el tomate.");
+        r9.agregarPaso("3. Calentar aceite en una olla grande a fuego medio y sofreír la cebolla y el ajo hasta que estén dorados.");
+        r9.agregarPaso("4. Añadir la zanahoria y el tomate, y cocinar unos minutos hasta que se suavicen.");
+        r9.agregarPaso("5. Agregar las lentejas escurridas, la papa, sal, pimienta y laurel al gusto.");
+        r9.agregarPaso("6. Cubrir con agua o caldo de verduras y llevar a ebullición.");
+        r9.agregarPaso("7. Bajar el fuego y cocinar a fuego lento durante 25-30 minutos, hasta que las lentejas estén blandas.");
+        r9.agregarPaso("8. Rectificar la sal y pimienta, remover y servir caliente.");
         recetas.insertar(r9);
 
-        // Receta 10: Tostadas francesas
+      // Receta 10: Tostadas francesas
         Receta r10("Tostadas francesas", "desayuno");
+
+        // Ingredientes
         r10.agregarIngrediente("pan");
         r10.agregarIngrediente("huevo");
         r10.agregarIngrediente("leche");
         r10.agregarIngrediente("azucar");
-        r10.agregarPaso("1. Batir el huevo con la leche y el azucar");
-        r10.agregarPaso("2. Remojar las rebanadas de pan en la mezcla");
-        r10.agregarPaso("3. Dorar en una sarten con mantequilla");
+        r10.agregarIngrediente("canela");       
+        r10.agregarIngrediente("mantequilla");  
+        r10.agregarIngrediente("vainilla");     
+        r10.agregarIngrediente("frutas");       
+        r10.agregarIngrediente("miel"); 
+
+        // Pasos de preparación
+        r10.agregarPaso("1. Batir los huevos en un bol grande con la leche, azucar, canela y un poco de vainilla.");
+        r10.agregarPaso("2. Remojar las rebanadas de pan en la mezcla, asegurándose de que absorban bien el líquido.");
+        r10.agregarPaso("3. Calentar una sartén a fuego medio y derretir un poco de mantequilla.");
+        r10.agregarPaso("4. Dorar las rebanadas de pan por ambos lados hasta que estén doradas y crujientes.");
+        r10.agregarPaso("5. Servir calientes, acompañadas de frutas frescas y miel al gusto.");
+
         recetas.insertar(r10);
 
+        // Receta 11: Caldo de costilla
         Receta r11("Caldo de costilla", "sopa");
+
+        // Ingredientes
         r11.agregarIngrediente("costilla");
         r11.agregarIngrediente("papa");
         r11.agregarIngrediente("cebolla");
         r11.agregarIngrediente("ajo");
         r11.agregarIngrediente("sal");
-        r11.agregarPaso("1. Hervir agua y agregar la costilla.");
-        r11.agregarPaso("2. Añadir papa, cebolla y ajo.");
-        r11.agregarPaso("3. Cocinar a fuego medio hasta ablandar la carne.");
-        recetas.insertar(r11);
+        r11.agregarIngrediente("zanahoria");      // opcional, para más sabor
+        r11.agregarIngrediente("apio");           // opcional
+        r11.agregarIngrediente("pimenton");       // opcional
+        r11.agregarIngrediente("papa criolla");   // opcional, para variar textura
+        r11.agregarIngrediente("agua");           // base del caldo
+        r11.agregarIngrediente("cilantro");       // opcional, para decorar
 
+        // Pasos de preparación
+        r11.agregarPaso("1. Lavar bien las costillas y ponerlas a hervir en una olla con suficiente agua.");
+        r11.agregarPaso("2. Mientras hierve, pelar y cortar las papas, zanahorias, cebolla, ajo, apio y pimenton.");
+        r11.agregarPaso("3. Añadir las verduras a la olla y sazonar con sal al gusto.");
+        r11.agregarPaso("4. Cocinar a fuego medio durante aproximadamente 1 a 1.5 horas hasta que la carne esté tierna.");
+        r11.agregarPaso("5. Rectificar la sal y agregar cilantro picado antes de servir.");
+        r11.agregarPaso("6. Servir caliente acompañado de arroz o arepas si se desea.");
+        recetas.insertar(r11);
+        
+        // Receta 12: Arequipe casero
         Receta r12("Arequipe casero", "postre");
+
+        // Ingredientes
         r12.agregarIngrediente("leche");
         r12.agregarIngrediente("azucar");
-        r12.agregarIngrediente("bicarbonato");
-        r12.agregarPaso("1. Calentar la leche con azucar y bicarbonato.");
-        r12.agregarPaso("2. Revolver hasta que espese y tomar color caramelo.");
+        r12.agregarIngrediente("bicarbonato de sodio");
+        r12.agregarIngrediente("esencia de vainilla"); // opcional, para sabor
+        r12.agregarIngrediente("sal");                // opcional, una pizca para resaltar sabor
+
+        // Pasos de preparación
+        r12.agregarPaso("1. Verter la leche en una olla grande y agregar el azúcar y el bicarbonato de sodio.");
+        r12.agregarPaso("2. Calentar a fuego medio-bajo, removiendo constantemente para evitar que se pegue.");
+        r12.agregarPaso("3. Cocinar lentamente hasta que la mezcla adquiera un color dorado/caramelo y espese (aproximadamente 1-2 horas).");
+        r12.agregarPaso("4. Agregar una pizca de sal y unas gotas de esencia de vainilla si se desea.");
+        r12.agregarPaso("5. Retirar del fuego y dejar enfriar, removiendo ocasionalmente para obtener una textura suave.");
+        r12.agregarPaso("6. Guardar en frascos limpios y herméticos. Servir como postre o para untar.");
         recetas.insertar(r12);
 
         // Receta 13: Bandeja paisa
         Receta r13("Bandeja paisa", "plato principal");
+
+        // Ingredientes
         r13.agregarIngrediente("arroz");
         r13.agregarIngrediente("carne molida");
         r13.agregarIngrediente("frijoles rojos");
         r13.agregarIngrediente("aguacate");
         r13.agregarIngrediente("huevo");
         r13.agregarIngrediente("arepa");
-        r13.agregarPaso("1. Cocinar el arroz blanco");
-        r13.agregarPaso("2. Freír la carne molida");
-        r13.agregarPaso("3. Cocinar los frijoles rojos");
-        r13.agregarPaso("4. Freír el huevo y preparar la arepa");
-        r13.agregarPaso("5. Servir todos los ingredientes juntos con el aguacate");
+        r13.agregarIngrediente("chicharrón");       
+        r13.agregarIngrediente("plátano maduro");   
+        r13.agregarIngrediente("sal");
+        r13.agregarIngrediente("aceite");
+        r13.agregarIngrediente("ají o salsa picante"); 
+
+        // Pasos de preparación
+        r13.agregarPaso("1. Lavar y cocinar los frijoles rojos en agua con sal hasta que estén blandos.");
+        r13.agregarPaso("2. Cocinar el arroz blanco en agua con un poco de sal y aceite.");
+        r13.agregarPaso("3. Freír la carne molida con sal, ajo y cebolla picada al gusto.");
+        r13.agregarPaso("4. Freír los huevos individualmente al gusto.");
+        r13.agregarPaso("5. Preparar las arepas en una plancha o sartén hasta dorarlas ligeramente.");
+        r13.agregarPaso("6. Opcional: freír el chicharrón y el plátano maduro.");
+        r13.agregarPaso("7. Montar el plato colocando arroz, frijoles, carne, huevo, aguacate, arepa y los acompañamientos opcionales.");
+        r13.agregarPaso("8. Servir caliente, agregando salsa picante al gusto si se desea.");
         recetas.insertar(r13);
 
         // Receta 14: Chocolate con queso
         Receta r14("Chocolate con queso", "bebida");
+
+        // Ingredientes
         r14.agregarIngrediente("chocolate");
         r14.agregarIngrediente("leche");
         r14.agregarIngrediente("queso");
-        r14.agregarPaso("1. Calentar la leche");
-        r14.agregarPaso("2. Agregar el chocolate y mezclar hasta disolver");
-        r14.agregarPaso("3. Añadir el queso y revolver bien");
+        r14.agregarIngrediente("azúcar");      
+        r14.agregarIngrediente("canela");       
+
+        // Pasos de preparación
+        r14.agregarPaso("1. Calentar la leche en una olla a fuego medio, sin que llegue a hervir.");
+        r14.agregarPaso("2. Agregar el chocolate troceado y mezclar constantemente hasta que se disuelva por completo.");
+        r14.agregarPaso("3. Añadir el queso en cubos pequeños y revolver hasta que se derrita parcialmente y quede cremoso.");
+        r14.agregarPaso("4. Opcional: añadir azúcar al gusto y una pizca de canela para sabor extra.");
+        r14.agregarPaso("5. Servir caliente en tazas individuales.");
         recetas.insertar(r14);
 
-        // Receta 15: Empanadas de carne
+         // Receta 15: Empanadas de carne
         Receta r15("Empanadas de carne", "pasabocas");
+        // Ingredientes
         r15.agregarIngrediente("harina de maiz");
         r15.agregarIngrediente("carne molida");
         r15.agregarIngrediente("papa");
         r15.agregarIngrediente("cebolla");
         r15.agregarIngrediente("ajo");
-        r15.agregarPaso("1. Cocinar la carne con cebolla y ajo");
-        r15.agregarPaso("2. Cocinar y aplastar la papa");
-        r15.agregarPaso("3. Preparar la masa con harina de maíz y formar empanadas");
-        r15.agregarPaso("4. Rellenar con carne y papa");
-        r15.agregarPaso("5. Freír hasta dorar");
+        r15.agregarIngrediente("aceite");        
+        r15.agregarIngrediente("sal");
+        r15.agregarIngrediente("pimienta");
+        r15.agregarIngrediente("agua");          
+        r15.agregarIngrediente("huevo");        
+
+        // Pasos de preparación
+        r15.agregarPaso("1. Pelar y picar finamente la cebolla y el ajo.");
+        r15.agregarPaso("2. Cocinar la carne molida en un sartén con aceite, sal y pimienta, agregando la cebolla y el ajo hasta que esté dorada.");
+        r15.agregarPaso("3. Cocinar las papas, aplastarlas y mezclar con un poco de sal.");
+        r15.agregarPaso("4. Preparar la masa con harina de maíz, agua y una pizca de sal hasta obtener una consistencia suave.");
+        r15.agregarPaso("5. Formar discos de masa, rellenar con la mezcla de carne y papa, y cerrar formando empanadas.");
+        r15.agregarPaso("6. Opcional: pincelar con huevo batido para dorar mejor.");
+        r15.agregarPaso("7. Freír las empanadas en aceite caliente hasta que estén doradas y crujientes.");
+        r15.agregarPaso("8. Escurrir sobre papel absorbente y servir calientes.");
         recetas.insertar(r15);
 
+
         
-        // Configurar relaciones entre ingredientes (sustituciones)
         relacionesIngredientes.agregarRelacion("limon", "vinagre");
         relacionesIngredientes.agregarRelacion("pollo", "pavo");
         relacionesIngredientes.agregarRelacion("pollo", "carne");
@@ -234,6 +422,32 @@ private:
         relacionesIngredientes.agregarRelacion("bicarbonato", "polvo de hornear");
         relacionesIngredientes.agregarRelacion("queso", "queso rallado");
         relacionesIngredientes.agregarRelacion("maiz", "harina de maiz");
+        relacionesIngredientes.agregarRelacion("aceite", "mantequilla");
+        relacionesIngredientes.agregarRelacion("sal", "sal marina");
+        relacionesIngredientes.agregarRelacion("pimienta", "ají molido");
+        relacionesIngredientes.agregarRelacion("agua", "caldo");
+        relacionesIngredientes.agregarRelacion("pan", "tortilla");
+        relacionesIngredientes.agregarRelacion("pollo", "pavo");
+        relacionesIngredientes.agregarRelacion("carne molida", "pollo");
+        relacionesIngredientes.agregarRelacion("huevo", "claras de huevo");
+        relacionesIngredientes.agregarRelacion("queso", "queso rallado");
+        relacionesIngredientes.agregarRelacion("leche", "bebida vegetal");
+        relacionesIngredientes.agregarRelacion("chocolate", "cacao");
+        relacionesIngredientes.agregarRelacion("arequipe", "dulce de leche");
+        relacionesIngredientes.agregarRelacion("harina de maiz", "harina de trigo");
+        relacionesIngredientes.agregarRelacion("banana", "mango");
+        relacionesIngredientes.agregarRelacion("fresa", "mora");
+        relacionesIngredientes.agregarRelacion("pimenton", "ají");
+        relacionesIngredientes.agregarRelacion("papa", "yuca");
+        relacionesIngredientes.agregarRelacion("arroz", "pasta");
+        relacionesIngredientes.agregarRelacion("zanahoria", "calabaza");
+        relacionesIngredientes.agregarRelacion("ajo", "cebollin");
+        relacionesIngredientes.agregarRelacion("limon", "vinagre");
+        relacionesIngredientes.agregarRelacion("aguacate", "mantequilla");
+        relacionesIngredientes.agregarRelacion("frijoles rojos", "lentejas");
+        relacionesIngredientes.agregarRelacion("costilla", "carne de res");
+        relacionesIngredientes.agregarRelacion("bicarbonato", "polvo de hornear");
+        relacionesIngredientes.agregarRelacion("mantequilla", "margarina");
     }
 
 
@@ -554,6 +768,7 @@ public:
     }
     
 };
+
 
 
 
