@@ -164,6 +164,7 @@ private:
         r12.agregarPaso("2. Revolver hasta que espese y tomar color caramelo.");
         recetas.insertar(r12);
 
+        // Receta 13: Bandeja paisa
         Receta r13("Bandeja paisa", "plato principal");
         r13.agregarIngrediente("arroz");
         r13.agregarIngrediente("carne molida");
@@ -171,20 +172,35 @@ private:
         r13.agregarIngrediente("aguacate");
         r13.agregarIngrediente("huevo");
         r13.agregarIngrediente("arepa");
+        r13.agregarPaso("1. Cocinar el arroz blanco");
+        r13.agregarPaso("2. Freír la carne molida");
+        r13.agregarPaso("3. Cocinar los frijoles rojos");
+        r13.agregarPaso("4. Freír el huevo y preparar la arepa");
+        r13.agregarPaso("5. Servir todos los ingredientes juntos con el aguacate");
         recetas.insertar(r13);
 
+        // Receta 14: Chocolate con queso
         Receta r14("Chocolate con queso", "bebida");
         r14.agregarIngrediente("chocolate");
         r14.agregarIngrediente("leche");
         r14.agregarIngrediente("queso");
+        r14.agregarPaso("1. Calentar la leche");
+        r14.agregarPaso("2. Agregar el chocolate y mezclar hasta disolver");
+        r14.agregarPaso("3. Añadir el queso y revolver bien");
         recetas.insertar(r14);
 
+        // Receta 15: Empanadas de carne
         Receta r15("Empanadas de carne", "pasabocas");
         r15.agregarIngrediente("harina de maiz");
         r15.agregarIngrediente("carne molida");
         r15.agregarIngrediente("papa");
         r15.agregarIngrediente("cebolla");
         r15.agregarIngrediente("ajo");
+        r15.agregarPaso("1. Cocinar la carne con cebolla y ajo");
+        r15.agregarPaso("2. Cocinar y aplastar la papa");
+        r15.agregarPaso("3. Preparar la masa con harina de maíz y formar empanadas");
+        r15.agregarPaso("4. Rellenar con carne y papa");
+        r15.agregarPaso("5. Freír hasta dorar");
         recetas.insertar(r15);
 
         
@@ -538,6 +554,7 @@ public:
     }
     
 };
+
 
 
 
