@@ -608,81 +608,85 @@ public:
         cout << "\n";
     }
 }
-    void verAlternativas() {
-        if (ingredientesDisponibles.estaVacia()) {
-            InterfazConsola::mensajeError("Primero debe ingresar sus ingredientes disponibles.");
-            return;
-        }
-    
-        auto resultados = recetas.buscarRecetas(ingredientesDisponibles);
-    
-        if (resultados.empty()) {
-            InterfazConsola::mensajeInfo("No hay recetas suficientes para sugerir alternativas.");
-            return;
-        }
-    
-        InterfazConsola::limpiar();
-        InterfazConsola::titulo("🔄  SUSTITUCIONES Y ALTERNATIVAS DE INGREDIENTES  🔄");
-        InterfazConsola::linea();
-    
-        bool hayAlternativas = false;
-    
-        cout << "\n📌 Análisis de recetas y sus posibles sustituciones:\n\n";
-    
-        for (const auto& par : resultados) {
-            Receta* receta = par.first;
-            double coincidencia = par.second;
-    
-            if (coincidencia == 100) continue;
-    
-            vector<string> faltantes = receta->obtenerFaltantes(ingredientesDisponibles);
-            vector<string> alternativas = relacionesIngredientes.sugerirAlternativas(faltantes);
-    
-            // Mostrar solo recetas con faltantes
-            if (!faltantes.empty()) {
-                hayAlternativas = true;
-    
-                // Mostrar nombre de receta
-                InterfazConsola::color(14);
-                cout << "🍽️  " << receta->getNombre() << "\n";
-                InterfazConsola::color(7);
-                cout << "   (" << fixed << setprecision(0) << coincidencia << "% de coincidencia)\n\n";
-    
-                // Ingredientes faltantes
-                InterfazConsola::color(12);
-                cout << "   ❌ Ingredientes faltantes:\n";
-                InterfazConsola::color(7);
-    
-                for (const auto& f : faltantes)
-                    InterfazConsola::itemLista("• " + f, false);
-    
-                cout << "\n";
-    
-                // Alternativas disponibles
-                if (!alternativas.empty()) {
-                    InterfazConsola::color(11);
-                    cout << "   🔁 Posibles sustitutos:\n";
-                    InterfazConsola::color(7);
-    
-                    for (const auto& alt : alternativas)
-                        InterfazConsola::itemLista("• " + alt, true);
-    
-                    cout << "\n";
-                } else {
-                    InterfazConsola::color(8);
-                    cout << "   (No se encontraron sustitutos para esta receta)\n\n";
-                    InterfazConsola::color(7);
+   void verAlternativas() {
+    if (ingredientesDisponibles.estaVacia()) {
+        InterfazConsola::mensajeError("Primero debe ingresar sus ingredientes disponibles.");
+        return;
+    }
+
+    auto resultados = recetas.buscarRecetas(ingredientesDisponibles);
+
+    if (resultados.empty()) {
+        InterfazConsola::mensajeInfo("No hay recetas suficientes para sugerir alternativas.");
+        return;
+    }
+
+    InterfazConsola::limpiar();
+    InterfazConsola::titulo("🔄  SUSTITUCIONES Y ALTERNATIVAS DE INGREDIENTES  🔄");
+    InterfazConsola::linea();
+
+    bool hayAlternativas = false;
+
+    cout << "\n📌 Análisis de recetas y sus posibles sustituciones:\n\n";
+
+    for (const auto& par : resultados) {
+        Receta* receta = par.first;
+        double coincidencia = par.second;
+
+        if (coincidencia == 100) continue; // Saltar recetas completas
+
+        vector<string> faltantes = receta->obtenerFaltantes(ingredientesDisponibles);
+
+        // Mostrar solo recetas con faltantes
+        if (!faltantes.empty()) {
+            hayAlternativas = true;
+
+            // Mostrar nombre de receta
+            InterfazConsola::color(14);
+            cout << "🍽️  " << receta->getNombre() << "\n";
+            InterfazConsola::color(7);
+            cout << "   (" << fixed << setprecision(0) << coincidencia << "% de coincidencia)\n\n";
+
+            // Ingredientes faltantes
+            InterfazConsola::color(12);
+            cout << "   ❌ Ingredientes faltantes:\n";
+            InterfazConsola::color(7);
+            for (const auto& f : faltantes)
+                InterfazConsola::itemLista("• " + f, false);
+            cout << "\n";
+
+            // Mostrar sustituciones indicando qué ingrediente reemplaza
+            bool tieneSustitutos = false;
+            InterfazConsola::color(11);
+            cout << "   🔁 Posibles sustitutos:\n";
+            InterfazConsola::color(7);
+
+            for (const auto& f : faltantes) {
+                vector<string> subs = relacionesIngredientes.sugerirAlternativas({f});
+                if (!subs.empty()) {
+                    tieneSustitutos = true;
+                    for (const auto& sub : subs) {
+                        InterfazConsola::itemLista("✔ " + sub + "  (para " + f + ")", true);
+                    }
                 }
-    
-                InterfazConsola::linea();
-                cout << "\n";
             }
-        }
-    
-        if (!hayAlternativas) {
-            InterfazConsola::mensajeOK("🎉 Todas tus recetas tienen 100% coincidencia. No se necesitan sustitutos.");
+
+            if (!tieneSustitutos) {
+                InterfazConsola::color(8);
+                cout << "   (No se encontraron sustitutos para esta receta)\n";
+                InterfazConsola::color(7);
+            }
+
+            cout << "\n";
+            InterfazConsola::linea();
+            cout << "\n";
         }
     }
+
+    if (!hayAlternativas) {
+        InterfazConsola::mensajeOK("🎉 Todas tus recetas tienen 100% coincidencia. No se necesitan sustitutos.");
+    }
+}
     
     void verPasosReceta() {
         if (ingredientesDisponibles.estaVacia()) {
@@ -768,6 +772,7 @@ public:
     }
     
 };
+
 
 
 
