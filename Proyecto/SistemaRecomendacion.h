@@ -290,75 +290,94 @@ public:
     }
     
     void verRecetasSugeridas() {
-        if (ingredientesDisponibles.estaVacia()) {
-            InterfazConsola::mensajeError("Primero debe ingresar sus ingredientes disponibles.");
-            return;
-        }
-    
-        InterfazConsola::limpiar();
-        InterfazConsola::titulo("📋  RECETAS SUGERIDAS SEGÚN TUS INGREDIENTES  📋");
-        InterfazConsola::linea();
-    
-        vector<string> misIngredientes = ingredientesDisponibles.obtenerTodos();
-    
-        // Mostrar ingredientes disponibles
-        cout << "\n🛒  Ingredientes disponibles:\n\n";
-        for (auto& ing : misIngredientes) {
-            InterfazConsola::itemLista("• " + ing, true);
-        }
-    
-        cout << "\n───────────────────────────────────────────────────────────────\n";
-        cout << "Buscando recetas...\n\n";
-    
-        auto resultados = recetas.buscarRecetas(ingredientesDisponibles);
-    
-        if (resultados.empty()) {
-            cout << "\n❌ No se encontraron recetas con los ingredientes disponibles.\n\n";
-            return;
-        }
-    
-        cout << "✅ Se encontraron " << resultados.size() << " recetas compatibles:\n\n";
-    
-        int num = 1;
-    
-        for (const auto& par : resultados) {
-            Receta* receta = par.first;
-            double coincidencia = par.second;
-    
-            // Encabezado de receta
-            InterfazConsola::color(14);
-            cout << "🍽️  " << num++ << ") " << receta->getNombre() << "\n";
-            InterfazConsola::color(7);
-    
-            // Porcentaje
-            cout << "   ";
-            InterfazConsola::color(11);
-            cout << fixed << setprecision(0) 
-                << coincidencia << "% coincidencia\n";
-            InterfazConsola::color(7);
-    
-            // Mostrar faltantes si no es 100%
-            if (coincidencia < 100) {
-                vector<string> faltantes = receta->obtenerFaltantes(ingredientesDisponibles);
-    
-                InterfazConsola::color(12);
-                cout << "   ❌ Ingredientes faltantes:\n";
-                InterfazConsola::color(7);
-    
-                for (auto& f : faltantes)
-                    InterfazConsola::itemLista("• " + f, false);
-    
-                cout << "\n";
-            } else {
-                InterfazConsola::color(10);
-                cout << "   ✅ Puedes preparar esta receta completamente.\n\n";
-                InterfazConsola::color(7);
+    if (ingredientesDisponibles.estaVacia()) {
+        InterfazConsola::mensajeError("Primero debe ingresar sus ingredientes disponibles.");
+        return;
+    }
+
+    InterfazConsola::limpiar();
+    InterfazConsola::titulo("📋  RECETAS SUGERIDAS SEGÚN TUS INGREDIENTES  📋");
+    InterfazConsola::linea();
+
+    vector<string> misIngredientes = ingredientesDisponibles.obtenerTodos();
+
+    // Mostrar ingredientes disponibles
+    cout << "\n🛒  Ingredientes disponibles:\n\n";
+    for (auto& ing : misIngredientes) {
+        InterfazConsola::itemLista("• " + ing, true);
+    }
+
+    cout << "\n───────────────────────────────────────────────────────────────\n";
+    cout << "Buscando recetas...\n\n";
+
+    auto resultados = recetas.buscarRecetas(ingredientesDisponibles);
+
+    if (resultados.empty()) {
+        cout << "\n❌ No se encontraron recetas con los ingredientes disponibles.\n\n";
+        return;
+    }
+
+    cout << "✅ Se encontraron " << resultados.size() << " recetas compatibles:\n\n";
+
+    int num = 1;
+
+    for (const auto& par : resultados) {
+        Receta* receta = par.first;
+        double coincidencia = par.second;
+
+        // Encabezado de receta
+        InterfazConsola::color(14);
+        cout << "🍽️  " << num++ << ") " << receta->getNombre() << "\n";
+        InterfazConsola::color(7);
+
+        // Porcentaje
+        cout << "   ";
+        InterfazConsola::color(11);
+        cout << fixed << setprecision(0) << coincidencia << "% coincidencia\n";
+        InterfazConsola::color(7);
+
+        // Obtener faltantes
+        vector<string> faltantes = receta->obtenerFaltantes(ingredientesDisponibles);
+
+        // Obtener ingredientes disponibles de la receta
+        vector<string> disponiblesEnReceta;
+        for (const auto& ing : receta->getIngredientes()) {
+            bool esFaltante = false;
+            for (const auto& f : faltantes) {
+                if (f == ing) { esFaltante = true; break; }
             }
-    
-            InterfazConsola::linea();
+            if (!esFaltante) disponiblesEnReceta.push_back(ing);
+        }
+
+        // Mostrar ingredientes disponibles
+        if (!disponiblesEnReceta.empty()) {
+            InterfazConsola::color(10);
+            cout << "   ✅ Ingredientes disponibles:\n";
+            InterfazConsola::color(7);
+            for (const auto& ing : disponiblesEnReceta)
+                InterfazConsola::itemLista("• " + ing, true);
             cout << "\n";
         }
+
+        // Mostrar ingredientes faltantes
+        if (!faltantes.empty()) {
+            InterfazConsola::color(12);
+            cout << "   ❌ Ingredientes faltantes:\n";
+            InterfazConsola::color(7);
+            for (auto& f : faltantes)
+                InterfazConsola::itemLista("• " + f, false);
+            cout << "\n";
+        } else {
+            // Si no hay faltantes, mensaje de receta completa
+            InterfazConsola::color(10);
+            cout << "   ✅ Puedes preparar esta receta completamente.\n\n";
+            InterfazConsola::color(7);
+        }
+
+        InterfazConsola::linea();
+        cout << "\n";
     }
+}
     void verAlternativas() {
         if (ingredientesDisponibles.estaVacia()) {
             InterfazConsola::mensajeError("Primero debe ingresar sus ingredientes disponibles.");
@@ -519,6 +538,7 @@ public:
     }
     
 };
+
 
 
 
